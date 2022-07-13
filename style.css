@@ -6,3 +6,14 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.title{
+  display: flex;
+  justify-content: center;
+  font-size: 2.3em;
+  background-color: white;
+  align-items: center;
+  height:10vh;
+}
+body{
+  background-color: rgb(221, 221, 221);
+}
