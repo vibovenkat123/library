@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <style src="./script.js" defer></style>
+  <script src="./script.js" defer></script>
   <title>Library</title>
 </head>
 <body>
@@ -15,6 +15,33 @@
   <div class="addBtn">
     <button id = 'add'>Add Book</button>
   </div>
+  <div class="grid">
+  </div>
+  <div class="form" id = 'form'>
+    <form>
+      <div class="titleBook">
+        <label for="bookTitle">Title</label>
+        <br>
+        <input type="text" id="bookTitle" required>
+      </div>
+      <div class="Author">
+        <label for="bookAuthor">Author</label>
+        <br>
+        <input type="text" id="bookAuthor" required>
+      </div>
+      <div class="pages">
+        <label for="bookPages">Num of Pages</label>
+        <br>
+        <input type="number" id="bookPages" required>
+      </div>
+      <div class="readRadio">
+        <input type="radio" id="bookRead" name = 'isRead' value="read" required>
+        <label for="bookRead">Read</label>
+      </div>
+      <div class="submit">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
-
 </html>

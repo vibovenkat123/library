@@ -6,6 +6,40 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top:15vh;
+  height: 400px;
+  display: none;
+}
+form{
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+}
+form input{
+  border: 2px black solid;
+  border-radius: 25px;
+  padding: 5px;
+}
+form div{
+  margin-bottom: 30px;
+}
+form button{
+  border: 1px solid lightgreen;
+  border-radius: 25px;
+  background-color: lightgreen;
+  width:100px;
+  height:35px;
+  font-size: 1em;
+}
+.submit{
+  display: flex;
+  justify-content: center;
+}
+
 .title{
   display: flex;
   justify-content: center;
