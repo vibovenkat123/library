@@ -9,20 +9,53 @@
 .form {
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
   top:15vh;
   height: 400px;
   display: none;
+  top:11;
+  left: 50vw;
+}
+.grid{
+  position: relative;
+  top:30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  width: 100vw;
+  justify-items: center;
+}
+.grid-container{
+  display: flex;
+  justify-content: center;
+}
+.card{
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:18em;
+  width:15em;
+  padding:15px;
+  break-after: always;
+}
+.card > *{
+  text-align: center;
+  font-size: 1.3em;
 }
 form{
+  border: 2px black solid;
   background-color: white;
   padding: 30px;
   border-radius: 15px;
+  position: absolute;
+
 }
 form input{
   border: 2px black solid;
   border-radius: 25px;
-  padding: 5px;
+  padding: 5px; 
 }
 form div{
   margin-bottom: 30px;
@@ -35,6 +68,7 @@ form button{
   height:35px;
   font-size: 1em;
 }
+
 .submit{
   display: flex;
   justify-content: center;
@@ -51,6 +85,7 @@ form button{
 body{
   background-color: rgb(221, 221, 221);
 }
+
 .addBtn{
   display: flex;
   justify-content: center;
@@ -72,8 +107,7 @@ button:hover{
   cursor: pointer;
 }
 .container{
-  width:75vw;
+  width:100vw;
   position: relative;
-  left: 15em;
   top:5em;
 }
