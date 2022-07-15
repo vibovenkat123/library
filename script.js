@@ -14,19 +14,26 @@ let card = '';
 let title = '';
 let author = '';
 let pages = '';
-let read = '';
+let read = ''; 
+let deleteBtn = '';
 const createElements = function(){
   card = document.createElement('div');
   title = document.createElement('p');
   author = document.createElement('p');
   pages = document.createElement('p');
-  read = document.createElement('p');
+  read = document.createElement('button');
+  deleteBtn = document.createElement('button');
+  deleteBtn.classList.add('deleteBtn');
+  deleteBtn.onclick = function(e){
+    e.target.parentNode.remove();
+  }
   card.classList.add('card');
   title.textContent = `"${bookTitle}"`;
   author.textContent = ` By: ${bookAuthor}`;
   pages.textContent = `${bookPages} pages`;
+  deleteBtn.textContent = 'Delete'
   if (bookRead.checked){
-    read.textContent = 'Read'
+    read.textContent = 's'
   }
   else{
     read.textContent = 'Not Read';
@@ -63,13 +70,12 @@ const updateVariables = () =>{
   console.log(bookRead.checked);
 }
 const loop = () => {
-  console.log();
   for (const book in library){
-
       card.appendChild(title);
       card.appendChild(author);
       card.appendChild(pages);
       card.appendChild(read);
+      card.appendChild(deleteBtn);
       grid.appendChild(card);
   }
 }
