@@ -25,6 +25,9 @@
   width: 100vw;
   justify-items: center;
 }
+button{
+  border: none;
+}
 .grid-container{
   display: flex;
   justify-content: center;
@@ -33,6 +36,14 @@
   background-color: rgb(255, 104, 104);
   border-radius: 15px;
   color:white;
+}
+.readBtn{
+  background-color: lightgreen;
+  border-radius: 15px;
+}
+.NotReadBtn{
+  background-color: lightcoral;
+  border-radius: 15px;
 }
 .card{
   background-color: white;

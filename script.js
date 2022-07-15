@@ -1,5 +1,4 @@
 let addBtn = document.getElementById('add');
-console.log(addBtn.textContent)
 let form = document.getElementById('form')
 let formElement = document.querySelector('form')
 let body = document.querySelector('body')
@@ -15,6 +14,7 @@ let title = '';
 let author = '';
 let pages = '';
 let read = ''; 
+let readBool  = false;
 let deleteBtn = '';
 const createElements = function(){
   card = document.createElement('div');
@@ -24,6 +24,10 @@ const createElements = function(){
   read = document.createElement('button');
   deleteBtn = document.createElement('button');
   deleteBtn.classList.add('deleteBtn');
+  read.onclick = function(){
+    readBool = !readBool
+    setRead();
+  }
   deleteBtn.onclick = function(e){
     e.target.parentNode.remove();
   }
@@ -32,19 +36,25 @@ const createElements = function(){
   author.textContent = ` By: ${bookAuthor}`;
   pages.textContent = `${bookPages} pages`;
   deleteBtn.textContent = 'Delete'
-  if (bookRead.checked){
-    read.textContent = 's'
+  setRead()
+}
+function setRead(){
+  if (readBool){
+    read.textContent = 'Read';
+    read.classList.remove('NotReadBtn');
+    read.classList.add('readBtn');
   }
   else{
     read.textContent = 'Not Read';
+    read.classList.add('NotReadBtn');
   }
 }
 function Book(title, author, pages, read) {
   if (read.checked){
-    this.read = 'Read';
+    readBool = true;
   }
   else{
-    this.read = 'Not Read';
+    readBool = false;
   }
   this.title = title;
   this.author = author;
@@ -57,7 +67,6 @@ submit.addEventListener('click', (e) => {
     let book = new Book(bookTitle, bookAuthor, bookPages, bookRead);
     createElements();
     library.push(book)
-    console.log(library);
     form.style.display = 'none'; 
     loop();
   }
@@ -67,7 +76,6 @@ const updateVariables = () =>{
   bookAuthor = document.querySelector('input#bookAuthor').value;
   bookPages = document.querySelector('input#bookPages').value;
   bookRead = document.getElementById('bookRead');
-  console.log(bookRead.checked);
 }
 const loop = () => {
   for (const book in library){
