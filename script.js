@@ -49,16 +49,18 @@ function setRead(){
     read.classList.add('NotReadBtn');
   }
 }
-function Book(title, author, pages, read) {
-  if (read.checked){
-    readBool = true;
+class Book {
+  constructor(title, author, pages, read) {
+    if (read.checked) {
+      readBool = true;
+    }
+    else {
+      readBool = false;
+    }
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
   }
-  else{
-    readBool = false;
-  }
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
 }
 submit.addEventListener('click', (e) => {
   if (formElement.checkValidity()){
